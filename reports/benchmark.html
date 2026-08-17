@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab 17 Report — student (practice)</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+         margin:0; background:#0f172a; color:#e2e8f0; }
+  .wrap { max-width:1100px; margin:0 auto; padding:28px 20px 60px; }
+  h1 { margin:0 0 4px; font-size:1.7rem; }
+  .meta { opacity:.7; font-size:.85rem; margin-bottom:18px; }
+  .banner { padding:10px 16px; border-radius:10px; font-weight:700;
+            color:#fff; background:#16a34a; margin-bottom:20px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+           gap:12px; margin-bottom:24px; }
+  .card { background:#1e293b; border-radius:12px; padding:14px 16px; }
+  .card .label { font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; opacity:.65; }
+  .card .value { font-size:1.5rem; font-weight:700; margin-top:4px; }
+  .card .sub { font-size:.75rem; opacity:.6; margin-top:2px; }
+  .progress { height:14px; background:#334155; border-radius:999px; overflow:hidden; margin-bottom:24px; }
+  .progress > i { display:block; height:100%; width:100.0%;
+                  background:linear-gradient(90deg,#22c55e,#16a34a); }
+  table { width:100%; border-collapse:collapse; font-size:.88rem; margin-bottom:28px; }
+  th, td { padding:8px 10px; text-align:left; border-bottom:1px solid #334155; }
+  th { font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; opacity:.7; }
+  td.num { text-align:right; font-variant-numeric:tabular-nums; }
+  td.issue { color:#fca5a5; font-size:.8rem; }
+  tr.row-ok td:first-child { border-left:3px solid #16a34a; }
+  tr.row-bad td:first-child { border-left:3px solid #dc2626; }
+  .pill { display:inline-block; padding:2px 9px; border-radius:999px; color:#fff;
+          font-size:.72rem; font-weight:600; }
+  .tag { padding:2px 9px; border-radius:6px; font-size:.72rem; font-weight:700; }
+  .tag.ok { background:#16a34a; color:#fff; }
+  .tag.bad { background:#dc2626; color:#fff; }
+  details.case, details.log { background:#1e293b; border-radius:10px; padding:10px 14px;
+                              margin-bottom:10px; border-left:4px solid #334155; }
+  details.case.ok { border-left-color:#16a34a; }
+  details.case.bad { border-left-color:#dc2626; }
+  summary { cursor:pointer; font-size:.9rem; }
+  pre { white-space:pre-wrap; word-break:break-word; background:#0f172a;
+        padding:12px; border-radius:8px; font-size:.8rem; overflow-x:auto; }
+  .budget ul { margin:6px 0; padding-left:18px; font-size:.82rem; }
+  h2 { margin-top:30px; font-size:1.15rem; }
+  @media (prefers-color-scheme: light) {
+    body { background:#f8fafc; color:#0f172a; }
+    .card, details.case, details.log { background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+    pre { background:#f1f5f9; }
+    th, td { border-bottom-color:#e2e8f0; }
+    .progress { background:#e2e8f0; }
+  }
+</style></head>
+<body><div class="wrap">
+  <h1>Lab 17 — Memory Benchmark Report</h1>
+  <div class="meta">Source: <code>benchmark.json</code> · generated 2026-08-17 13:54:12</div>
+  <div class="banner">PERFECT — all cases passed · 11/11 passed (100%)</div>
+  <div class="cards"><div class="card" style="border-top:4px solid #0ea5e9"><div class="label">Implementation</div><div class="value">student</div><div class="sub">kind: practice</div></div><div class="card" style="border-top:4px solid #16a34a"><div class="label">Passed</div><div class="value">11/11</div></div><div class="card" style="border-top:4px solid #7c3aed"><div class="label">Hit rate</div><div class="value">100.0%</div></div><div class="card" style="border-top:4px solid #d97706"><div class="label">Avg latency</div><div class="value">824.5 ms</div></div><div class="card" style="border-top:4px solid #0891b2"><div class="label">Token reduction</div><div class="value">14.2%</div></div></div>
+  <div class="progress"><i></i></div>
+  <h2>Cases</h2>
+  <table><thead><tr>
+    <th>Case</th><th>Layer</th><th>Result</th><th>Latency</th>
+    <th>Tokens</th><th>Reduction</th><th>Issue</th>
+  </tr></thead><tbody><tr class="row-ok"><td><b>E01</b></td><td><span class="pill" style="background:#2563eb">short_term</span></td><td><span class="tag ok">PASS</span></td><td class="num">0.1</td><td class="num">133</td><td class="num">0.0%</td><td class="issue"></td></tr><tr class="row-ok"><td><b>E06</b></td><td><span class="pill" style="background:#7c3aed">semantic</span></td><td><span class="tag ok">PASS</span></td><td class="num">374.0</td><td class="num">148</td><td class="num">67.8%</td><td class="issue"></td></tr><tr class="row-ok"><td><b>E09</b></td><td><span class="pill" style="background:#059669">long_term</span></td><td><span class="tag ok">PASS</span></td><td class="num">1636.6</td><td class="num">816</td><td class="num">0.0%</td><td class="issue"></td></tr><tr class="row-ok"><td><b>E10</b></td><td><span class="pill" style="background:#2563eb">short_term</span></td><td><span class="tag ok">PASS</span></td><td class="num">0.5</td><td class="num">195</td><td class="num">0.0%</td><td class="issue"></td></tr><tr class="row-ok"><td><b>E02</b></td><td><span class="pill" style="background:#059669">long_term</span></td><td><span class="tag ok">PASS</span></td><td class="num">1338.3</td><td class="num">1356</td><td class="num">0.0%</td><td class="issue"></td></tr><tr class="row-ok"><td><b>E03</b></td><td><span class="pill" style="background:#059669">long_term</span></td><td><span class="tag ok">PASS</span></td><td class="num">1531.2</td><td class="num">1368</td><td class="num">0.0%</td><td class="issue"></td></tr><tr class="row-ok"><td><b>E04</b></td><td><span class="pill" style="background:#d97706">episodic</span></td><td><span class="tag ok">PASS</span></td><td class="num">271.0</td><td class="num">233</td><td class="num">0.0%</td><td class="issue"></td></tr><tr class="row-ok"><td><b>E05</b></td><td><span class="pill" style="background:#d97706">episodic</span></td><td><span class="tag ok">PASS</span></td><td class="num">332.5</td><td class="num">252</td><td class="num">0.0%</td><td class="issue"></td></tr><tr class="row-ok"><td><b>E07</b></td><td><span class="pill" style="background:#0891b2">mixed</span></td><td><span class="tag ok">PASS</span></td><td class="num">1738.6</td><td class="num">485</td><td class="num">14.2%</td><td class="issue"></td></tr><tr class="row-ok"><td><b>E11</b></td><td><span class="pill" style="background:#7c3aed">semantic</span></td><td><span class="tag ok">PASS</span></td><td class="num">303.8</td><td class="num">146</td><td class="num">74.2%</td><td class="issue"></td></tr><tr class="row-ok"><td><b>E08</b></td><td><span class="pill" style="background:#059669">long_term</span></td><td><span class="tag ok">PASS</span></td><td class="num">1542.5</td><td class="num">1349</td><td class="num">0.0%</td><td class="issue"></td></tr></tbody></table>
+  <h2>Evidence</h2>
+  <details class="case ok"><summary><span class="pill" style="background:#2563eb">short_term</span> <b>E01</b> — Ten du an ca nhan toi vua nhac la gi?</summary><div class="evidence"><b>Retrieved evidence</b><pre>&lt;RECENT_TURNS&gt;
+user: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan.
+assistant: Da hieu: demo ca nhan ORCHID-27, uu tien Python, tranh Java, vi du ngan.
+user: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline.
+assistant: Toi se uu tien timeline khi giai thich coroutine va Task.
+user: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600.
+&lt;/RECENT_TURNS&gt;</pre></div></details><details class="case ok"><summary><span class="pill" style="background:#7c3aed">semantic</span> <b>E06</b> — Quy tac retry POST payment la gi?</summary><div class="evidence"><b>Retrieved evidence</b><pre>EPISODE: {&quot;id&quot;:&quot;kb-payment-retry&quot;,&quot;entity&quot;:&quot;Payment API Retry Policy&quot;,&quot;summary&quot;:&quot;For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.&quot;,&quot;source&quot;:&quot;internal-api-guideline-v3&quot;,&quot;updated_at&quot;:&quot;2026-08-10T00:00:00Z&quot;}
+metadata=
+EPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.
+metadata=</pre></div></details><details class="case ok"><summary><span class="pill" style="background:#059669">long_term</span> <b>E09</b> — Lan uu tien stack backend nao cho LOTUS-88?</summary><div class="evidence"><b>Retrieved evidence</b><pre>&lt;USER_SUMMARY&gt;
+Lan&#x27;s project is LOTUS-88. Lan prioritizes Java and Spring Boot for backend development and does not use Python in that context.
+&lt;/USER_SUMMARY&gt;
+
+&lt;EPISODES&gt;
+Episodes are source message or document excerpts shown in selection order.
+  - Created At: 2026-08-01 11:00:20
+    Source: message
+    Content: Lab Assistant (assistant): Da hieu: LOTUS-88, Java + Spring Boot cho backend examples.
+  - Created At: 2026-08-01 11:00:00
+    Source: message
+    Content: [user] {
+  &quot;user_id&quot;: &quot;lan-lab17&quot;,
+  &quot;first_name&quot;: &quot;Lan&quot;,
+  &quot;last_name&quot;: &quot;Tran&quot;,
+  &quot;user_alias&quot;: &quot;Lan Tran&quot;
+}: Toi la Lan. Du an cua toi la LOTUS-88. Toi uu tien Java va Spring Boot, va khong dung Python trong vi du backend.
+&lt;/EPISODES&gt;
+
+&lt;FACTS&gt;
+The timestamp shown for each fact is the reference time of the source message that introduced it — i.e. when the fact was first mentioned. `date unknown` means no reference time is recorded for the source message.
+  - Lan prioritizes Java for the LOTUS-88 project. (2026-08-01 11:00:00)
+  - Lan&#x27;s project is LOTUS-88. (2026-08-01 11:00:00)
+  - Lan prioritizes Spring Boot for the LOTUS-88 project. (2026-08-01 11:00:00)
+  - Lan does not use Python in the backend for the LOTUS-88 pr</pre></div></details><details class="case ok"><summary><span class="pill" style="background:#2563eb">short_term</span> <b>E10</b> — Deadline review cu la khi nao?</summary><div class="evidence"><b>Retrieved evidence</b><pre>&lt;SESSION_SUMMARY&gt;
+user: Constraint: REVIEW-DEADLINE-1600 - project review is Friday at 16:00 and must not be forgotten. | assistant: Acknowledged review constraint. | user: Filler turn 1 about UI spacing. | assistant: Filler answer 1. | user: Filler turn 2 about naming. | assistant: Filler answer 2. | user: Filler turn 3 about logging. | assistant: Filler answer 3.
+&lt;/SESSION_SUMMARY&gt;
+&lt;DURABLE_NOTES&gt;
+- user: Constraint: REVIEW-DEADLINE-1600 - project review is Friday at 16:00 and must not be forgotten.
+- assistant: Acknowledged review constraint.
+&lt;/DURABLE_NOTES&gt;
+&lt;RECENT_TURNS&gt;
+user: Filler turn 4 about tests.
+assistant: Filler answer 4.
+user: Filler turn 5 about docs.
+assistant: Filler answer 5.
+user: Filler turn 6 about lint.
+assistant: Filler answer 6.
+&lt;/RECENT_TURNS&gt;</pre></div></details><details class="case ok"><summary><span class="pill" style="background:#059669">long_term</span> <b>E02</b> — Voi demo ca nhan cua Minh, ngon ngu uu tien la gi?</summary><div class="evidence"><b>Retrieved evidence</b><pre>&lt;USER_SUMMARY&gt;
+Minh is working on a personal project named ORCHID-27, for which he prefers to use Python. For company projects, specifically BLUEBIRD-42, the backend must use TypeScript with NestJS, and Python is not to be used for this project.
+
+Minh prefers Python and dislikes Java. For code explanations, Minh prefers short examples. Minh wants explanations of async/await and coroutine vs. Task to be presented as a timeline. Minh also stated &#x27;Toi se uu tien timeline khi giai thich coroutine va Task.&#x27;
+
+The user wants explanations of async/await and coroutine vs. Task to be presented as a timeline. The user also stated &#x27;Toi se uu tien timeline khi giai thich coroutine va Task.&#x27;
+&lt;/USER_SUMMARY&gt;
+
+&lt;EPISODES&gt;
+Episodes are source message or document excerpts shown in selection order.
+  - Created At: 2026-08-01 09:00:00
+    Source: message
+    Content: [user] {
+  &quot;user_id&quot;: &quot;minh-lab17&quot;,
+  &quot;first_name&quot;: &quot;Minh&quot;,
+  &quot;last_name&quot;: &quot;Nguyen&quot;,
+  &quot;user_alias&quot;: &quot;Minh Nguyen&quot;
+}: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan.
+&lt;/EPISODES&gt;
+
+&lt;FACTS&gt;
+The timestamp shown for each fact is the reference time of the source message that</pre></div></details><details class="case ok"><summary><span class="pill" style="background:#059669">long_term</span> <b>E03</b> — Minh con open loop hay deadline nao chua hoan thanh?</summary><div class="evidence"><b>Retrieved evidence</b><pre>&lt;USER_SUMMARY&gt;
+Minh is working on a personal project named ORCHID-27, for which he prefers to use Python. For company projects, specifically BLUEBIRD-42, the backend must use TypeScript with NestJS, and Python is not to be used for this project.
+
+Minh prefers Python and dislikes Java. For code explanations, Minh prefers short examples. Minh wants explanations of async/await and coroutine vs. Task to be presented as a timeline. Minh also stated &#x27;Toi se uu tien timeline khi giai thich coroutine va Task.&#x27;
+
+The user wants explanations of async/await and coroutine vs. Task to be presented as a timeline. The user also stated &#x27;Toi se uu tien timeline khi giai thich coroutine va Task.&#x27;
+&lt;/USER_SUMMARY&gt;
+
+&lt;EPISODES&gt;
+Episodes are source message or document excerpts shown in selection order.
+  - Created At: 2026-08-01 09:04:00
+    Source: message
+    Content: [user] {
+  &quot;user_id&quot;: &quot;minh-lab17&quot;,
+  &quot;first_name&quot;: &quot;Minh&quot;,
+  &quot;last_name&quot;: &quot;Nguyen&quot;,
+  &quot;user_alias&quot;: &quot;Minh Nguyen&quot;
+}: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600.
+&lt;/EPISODES&gt;
+
+&lt;FACTS&gt;
+The timestamp shown for each fact is the reference time of the source message that introduced it — i.e. when </pre></div></details><details class="case ok"><summary><span class="pill" style="background:#d97706">episodic</span> <b>E04</b> — Lan truoc Minh fix async HTTP timeout bang cach nao?</summary><div class="evidence"><b>Retrieved evidence</b><pre>EPISODE: Da ghi nhan trajectory: increase timeout khong hieu qua; ClientSession + concurrency=20 giai quyet connection churn.
+EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI
+EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan.
+EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline.
+EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600.
+EPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail.
+EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.</pre></div></details><details class="case ok"><summary><span class="pill" style="background:#d97706">episodic</span> <b>E05</b> — Reflection cua su co async la gi, tang timeout co phai root fix khong?</summary><div class="evidence"><b>Retrieved evidence</b><pre>EPISODE: Da ghi nhan trajectory: increase timeout khong hieu qua; ClientSession + concurrency=20 giai quyet connection churn.
+EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI
+EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan.
+EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline.
+EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600.
+EPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail.
+EPISODE: Hay kiem tra connection pool, lifecycle cua client va concurrency.
+EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.</pre></div></details><details class="case ok"><summary><span class="pill" style="background:#0891b2">mixed</span> <b>E07</b> — Hay chon huong dan code retry payment phu hop voi preference ca nhan cua Minh.</summary><div class="budget"><b>Budget</b><ul><li><span class="pill" style="background:#2563eb">short_term</span> used <b>0</b> / limit 800 (raw 0)</li><li><span class="pill" style="background:#059669">long_term</span> used <b>324</b> / limit 320 (raw 1368)</li><li><span class="pill" style="background:#d97706">episodic</span> used <b>0</b> / limit 240 (raw 0)</li><li><span class="pill" style="background:#7c3aed">semantic</span> used <b>148</b> / limit 240 (raw 148)</li></ul></div><div class="evidence"><b>Retrieved evidence</b><pre>&lt;LONG_TERM&gt;
+&lt;USER_SUMMARY&gt;
+Minh is working on a personal project named ORCHID-27, for which he prefers to use Python. For company projects, specifically BLUEBIRD-42, the backend must use TypeScript with NestJS, and Python is not to be used for this project.
+
+Minh prefers Python and dislikes Java. For code explanations, Minh prefers short examples. Minh wants explanations of async/await and coroutine vs. Task to be presented as a timeline. Minh also stated &#x27;Toi se uu tien timeline khi giai thich coroutine va Task.&#x27;
+
+The user wants explanations of async/await and coroutine vs. Task to be presented as a timeline. The user also stated &#x27;Toi se uu tien timeline khi giai thich coroutine va Task.&#x27;
+&lt;/USER_SUMMARY&gt;
+
+&lt;EPISODES&gt;
+Episodes are source message or document excerpts shown in selection order.
+  - Created At: 2026-08-01 09:00:00
+    Source: message
+    Content: [user] {
+  &quot;user_id&quot;: &quot;minh-lab17&quot;,
+  &quot;first_name&quot;: &quot;Minh&quot;,
+  &quot;last_name&quot;: &quot;Nguyen&quot;,
+  &quot;user_alias&quot;: &quot;Minh Nguyen&quot;
+}: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan.
+&lt;/EPISODES&gt;
+
+&lt;FACTS&gt;
+The timestamp shown for each fact is the reference time of the source </pre></div></details><details class="case ok"><summary><span class="pill" style="background:#7c3aed">semantic</span> <b>E11</b> — Theo incident playbook, truoc khi tang timeout can kiem tra gi?</summary><div class="evidence"><b>Retrieved evidence</b><pre>EPISODE: {&quot;id&quot;:&quot;kb-async-http&quot;,&quot;entity&quot;:&quot;Async HTTP Incident Playbook&quot;,&quot;summary&quot;:&quot;When async HTTP calls time out, inspect connection pooling, downstream saturation and concurrency before increasing timeout. Reuse a long-lived client session where possible. Marker: CONN-POOL-FIRST.&quot;,&quot;source&quot;:&quot;incident-playbook-2026&quot;,&quot;updated_at&quot;:&quot;2026-08-11T00:00:00Z&quot;}
+metadata=
+EPISODE: When async HTTP calls time out, inspect connection pooling, downstream saturation and concurrency before increasing timeout. Reuse a long-lived client session where possible. Marker: CONN-POOL-FIRST.
+metadata=</pre></div></details><details class="case ok"><summary><span class="pill" style="background:#059669">long_term</span> <b>E08</b> — Backend cua BLUEBIRD-42 bat buoc dung stack gi?</summary><div class="evidence"><b>Retrieved evidence</b><pre>&lt;USER_SUMMARY&gt;
+Minh is working on a personal project named ORCHID-27, for which he prefers to use Python. For company projects, specifically BLUEBIRD-42, the backend must use TypeScript with NestJS, and Python is not to be used for this project.
+
+Minh prefers Python and dislikes Java. For code explanations, Minh prefers short examples. Minh wants explanations of async/await and coroutine vs. Task to be presented as a timeline. Minh also stated &#x27;Toi se uu tien timeline khi giai thich coroutine va Task.&#x27;
+
+The user wants explanations of async/await and coroutine vs. Task to be presented as a timeline. The user also stated &#x27;Toi se uu tien timeline khi giai thich coroutine va Task.&#x27;
+&lt;/USER_SUMMARY&gt;
+
+&lt;EPISODES&gt;
+Episodes are source message or document excerpts shown in selection order.
+  - Created At: 2026-08-05 08:00:00
+    Source: message
+    Content: [user] {
+  &quot;user_id&quot;: &quot;minh-lab17&quot;,
+  &quot;first_name&quot;: &quot;Minh&quot;,
+  &quot;last_name&quot;: &quot;Nguyen&quot;,
+  &quot;user_alias&quot;: &quot;Minh Nguyen&quot;
+}: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHID-27.
+&lt;/EPISODES&gt;
+
+&lt;FACTS&gt;
+The timestamp sh</pre></div></details>
+  
+</div></body></html>

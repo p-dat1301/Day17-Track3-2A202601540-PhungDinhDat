@@ -3,6 +3,7 @@
 __pycache__/
 .pytest_cache/
 *.pyc
+.omo/
 data/golden_eval.json
 data/golden*.json
 !data/golden_eval.example.json

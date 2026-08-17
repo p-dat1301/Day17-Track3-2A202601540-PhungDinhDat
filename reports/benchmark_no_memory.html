@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab 17 Report — no_memory (practice)</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+         margin:0; background:#0f172a; color:#e2e8f0; }
+  .wrap { max-width:1100px; margin:0 auto; padding:28px 20px 60px; }
+  h1 { margin:0 0 4px; font-size:1.7rem; }
+  .meta { opacity:.7; font-size:.85rem; margin-bottom:18px; }
+  .banner { padding:10px 16px; border-radius:10px; font-weight:700;
+            color:#fff; background:#dc2626; margin-bottom:20px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+           gap:12px; margin-bottom:24px; }
+  .card { background:#1e293b; border-radius:12px; padding:14px 16px; }
+  .card .label { font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; opacity:.65; }
+  .card .value { font-size:1.5rem; font-weight:700; margin-top:4px; }
+  .card .sub { font-size:.75rem; opacity:.6; margin-top:2px; }
+  .progress { height:14px; background:#334155; border-radius:999px; overflow:hidden; margin-bottom:24px; }
+  .progress > i { display:block; height:100%; width:18.2%;
+                  background:linear-gradient(90deg,#22c55e,#16a34a); }
+  table { width:100%; border-collapse:collapse; font-size:.88rem; margin-bottom:28px; }
+  th, td { padding:8px 10px; text-align:left; border-bottom:1px solid #334155; }
+  th { font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; opacity:.7; }
+  td.num { text-align:right; font-variant-numeric:tabular-nums; }
+  td.issue { color:#fca5a5; font-size:.8rem; }
+  tr.row-ok td:first-child { border-left:3px solid #16a34a; }
+  tr.row-bad td:first-child { border-left:3px solid #dc2626; }
+  .pill { display:inline-block; padding:2px 9px; border-radius:999px; color:#fff;
+          font-size:.72rem; font-weight:600; }
+  .tag { padding:2px 9px; border-radius:6px; font-size:.72rem; font-weight:700; }
+  .tag.ok { background:#16a34a; color:#fff; }
+  .tag.bad { background:#dc2626; color:#fff; }
+  details.case, details.log { background:#1e293b; border-radius:10px; padding:10px 14px;
+                              margin-bottom:10px; border-left:4px solid #334155; }
+  details.case.ok { border-left-color:#16a34a; }
+  details.case.bad { border-left-color:#dc2626; }
+  summary { cursor:pointer; font-size:.9rem; }
+  pre { white-space:pre-wrap; word-break:break-word; background:#0f172a;
+        padding:12px; border-radius:8px; font-size:.8rem; overflow-x:auto; }
+  .budget ul { margin:6px 0; padding-left:18px; font-size:.82rem; }
+  h2 { margin-top:30px; font-size:1.15rem; }
+  @media (prefers-color-scheme: light) {
+    body { background:#f8fafc; color:#0f172a; }
+    .card, details.case, details.log { background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+    pre { background:#f1f5f9; }
+    th, td { border-bottom-color:#e2e8f0; }
+    .progress { background:#e2e8f0; }
+  }
+</style></head>
+<body><div class="wrap">
+  <h1>Lab 17 — Memory Benchmark Report</h1>
+  <div class="meta">Source: <code>benchmark_no_memory.json</code> · generated 2026-08-17 13:54:12</div>
+  <div class="banner">9 case(s) failing · 2/11 passed (18%)</div>
+  <div class="cards"><div class="card" style="border-top:4px solid #0ea5e9"><div class="label">Implementation</div><div class="value">no_memory</div><div class="sub">kind: practice</div></div><div class="card" style="border-top:4px solid #dc2626"><div class="label">Passed</div><div class="value">2/11</div></div><div class="card" style="border-top:4px solid #7c3aed"><div class="label">Hit rate</div><div class="value">18.2%</div></div><div class="card" style="border-top:4px solid #d97706"><div class="label">Avg latency</div><div class="value">0.0 ms</div></div><div class="card" style="border-top:4px solid #0891b2"><div class="label">Token reduction</div><div class="value">81.8%</div></div></div>
+  <div class="progress"><i></i></div>
+  <h2>Cases</h2>
+  <table><thead><tr>
+    <th>Case</th><th>Layer</th><th>Result</th><th>Latency</th>
+    <th>Tokens</th><th>Reduction</th><th>Issue</th>
+  </tr></thead><tbody><tr class="row-ok"><td><b>E01</b></td><td><span class="pill" style="background:#2563eb">short_term</span></td><td><span class="tag ok">PASS</span></td><td class="num">0.1</td><td class="num">133</td><td class="num">0.0%</td><td class="issue"></td></tr><tr class="row-bad"><td><b>E06</b></td><td><span class="pill" style="background:#7c3aed">semantic</span></td><td><span class="tag bad">FAIL</span></td><td class="num">0.0</td><td class="num">0</td><td class="num">100.0%</td><td class="issue">missing=Idempotency-Key, max-3-retries, exponential-backoff</td></tr><tr class="row-bad"><td><b>E09</b></td><td><span class="pill" style="background:#059669">long_term</span></td><td><span class="tag bad">FAIL</span></td><td class="num">0.0</td><td class="num">0</td><td class="num">100.0%</td><td class="issue">missing=LOTUS-88, Java, Spring Boot</td></tr><tr class="row-ok"><td><b>E10</b></td><td><span class="pill" style="background:#2563eb">short_term</span></td><td><span class="tag ok">PASS</span></td><td class="num">0.3</td><td class="num">195</td><td class="num">0.0%</td><td class="issue"></td></tr><tr class="row-bad"><td><b>E02</b></td><td><span class="pill" style="background:#059669">long_term</span></td><td><span class="tag bad">FAIL</span></td><td class="num">0.0</td><td class="num">0</td><td class="num">100.0%</td><td class="issue">missing=Python</td></tr><tr class="row-bad"><td><b>E03</b></td><td><span class="pill" style="background:#059669">long_term</span></td><td><span class="tag bad">FAIL</span></td><td class="num">0.0</td><td class="num">0</td><td class="num">100.0%</td><td class="issue">missing=benchmark report, 16:00</td></tr><tr class="row-bad"><td><b>E04</b></td><td><span class="pill" style="background:#d97706">episodic</span></td><td><span class="tag bad">FAIL</span></td><td class="num">0.0</td><td class="num">0</td><td class="num">100.0%</td><td class="issue">missing=ClientSession, concurrency=20, ASYNC-FIX-20</td></tr><tr class="row-bad"><td><b>E05</b></td><td><span class="pill" style="background:#d97706">episodic</span></td><td><span class="tag bad">FAIL</span></td><td class="num">0.0</td><td class="num">0</td><td class="num">100.0%</td><td class="issue">missing=connection churn, timeout threshold</td></tr><tr class="row-bad"><td><b>E07</b></td><td><span class="pill" style="background:#0891b2">mixed</span></td><td><span class="tag bad">FAIL</span></td><td class="num">0.0</td><td class="num">0</td><td class="num">100.0%</td><td class="issue">missing=Python, Idempotency-Key</td></tr><tr class="row-bad"><td><b>E11</b></td><td><span class="pill" style="background:#7c3aed">semantic</span></td><td><span class="tag bad">FAIL</span></td><td class="num">0.0</td><td class="num">0</td><td class="num">100.0%</td><td class="issue">missing=connection pooling, CONN-POOL-FIRST</td></tr><tr class="row-bad"><td><b>E08</b></td><td><span class="pill" style="background:#059669">long_term</span></td><td><span class="tag bad">FAIL</span></td><td class="num">0.0</td><td class="num">0</td><td class="num">100.0%</td><td class="issue">missing=BLUEBIRD-42, TypeScript, NestJS</td></tr></tbody></table>
+  <h2>Evidence</h2>
+  <details class="case ok"><summary><span class="pill" style="background:#2563eb">short_term</span> <b>E01</b> — Ten du an ca nhan toi vua nhac la gi?</summary><div class="evidence"><b>Retrieved evidence</b><pre>&lt;RECENT_TURNS&gt;
+user: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan.
+assistant: Da hieu: demo ca nhan ORCHID-27, uu tien Python, tranh Java, vi du ngan.
+user: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline.
+assistant: Toi se uu tien timeline khi giai thich coroutine va Task.
+user: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600.
+&lt;/RECENT_TURNS&gt;</pre></div></details><details class="case bad"><summary><span class="pill" style="background:#7c3aed">semantic</span> <b>E06</b> — Quy tac retry POST payment la gi?</summary><div class="evidence"><b>Retrieved evidence</b><pre>(empty)</pre></div></details><details class="case bad"><summary><span class="pill" style="background:#059669">long_term</span> <b>E09</b> — Lan uu tien stack backend nao cho LOTUS-88?</summary><div class="evidence"><b>Retrieved evidence</b><pre>(empty)</pre></div></details><details class="case ok"><summary><span class="pill" style="background:#2563eb">short_term</span> <b>E10</b> — Deadline review cu la khi nao?</summary><div class="evidence"><b>Retrieved evidence</b><pre>&lt;SESSION_SUMMARY&gt;
+user: Constraint: REVIEW-DEADLINE-1600 - project review is Friday at 16:00 and must not be forgotten. | assistant: Acknowledged review constraint. | user: Filler turn 1 about UI spacing. | assistant: Filler answer 1. | user: Filler turn 2 about naming. | assistant: Filler answer 2. | user: Filler turn 3 about logging. | assistant: Filler answer 3.
+&lt;/SESSION_SUMMARY&gt;
+&lt;DURABLE_NOTES&gt;
+- user: Constraint: REVIEW-DEADLINE-1600 - project review is Friday at 16:00 and must not be forgotten.
+- assistant: Acknowledged review constraint.
+&lt;/DURABLE_NOTES&gt;
+&lt;RECENT_TURNS&gt;
+user: Filler turn 4 about tests.
+assistant: Filler answer 4.
+user: Filler turn 5 about docs.
+assistant: Filler answer 5.
+user: Filler turn 6 about lint.
+assistant: Filler answer 6.
+&lt;/RECENT_TURNS&gt;</pre></div></details><details class="case bad"><summary><span class="pill" style="background:#059669">long_term</span> <b>E02</b> — Voi demo ca nhan cua Minh, ngon ngu uu tien la gi?</summary><div class="evidence"><b>Retrieved evidence</b><pre>(empty)</pre></div></details><details class="case bad"><summary><span class="pill" style="background:#059669">long_term</span> <b>E03</b> — Minh con open loop hay deadline nao chua hoan thanh?</summary><div class="evidence"><b>Retrieved evidence</b><pre>(empty)</pre></div></details><details class="case bad"><summary><span class="pill" style="background:#d97706">episodic</span> <b>E04</b> — Lan truoc Minh fix async HTTP timeout bang cach nao?</summary><div class="evidence"><b>Retrieved evidence</b><pre>(empty)</pre></div></details><details class="case bad"><summary><span class="pill" style="background:#d97706">episodic</span> <b>E05</b> — Reflection cua su co async la gi, tang timeout co phai root fix khong?</summary><div class="evidence"><b>Retrieved evidence</b><pre>(empty)</pre></div></details><details class="case bad"><summary><span class="pill" style="background:#0891b2">mixed</span> <b>E07</b> — Hay chon huong dan code retry payment phu hop voi preference ca nhan cua Minh.</summary><div class="budget"><b>Budget</b><ul><li><span class="pill" style="background:#2563eb">short_term</span> used <b>0</b> / limit 800 (raw 0)</li><li><span class="pill" style="background:#059669">long_term</span> used <b>0</b> / limit 320 (raw 0)</li><li><span class="pill" style="background:#d97706">episodic</span> used <b>0</b> / limit 240 (raw 0)</li><li><span class="pill" style="background:#7c3aed">semantic</span> used <b>0</b> / limit 240 (raw 0)</li></ul></div><div class="evidence"><b>Retrieved evidence</b><pre>(empty)</pre></div></details><details class="case bad"><summary><span class="pill" style="background:#7c3aed">semantic</span> <b>E11</b> — Theo incident playbook, truoc khi tang timeout can kiem tra gi?</summary><div class="evidence"><b>Retrieved evidence</b><pre>(empty)</pre></div></details><details class="case bad"><summary><span class="pill" style="background:#059669">long_term</span> <b>E08</b> — Backend cua BLUEBIRD-42 bat buoc dung stack gi?</summary><div class="evidence"><b>Retrieved evidence</b><pre>(empty)</pre></div></details>
+  
+</div></body></html>

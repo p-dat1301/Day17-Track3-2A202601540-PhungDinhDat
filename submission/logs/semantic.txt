@@ -1,0 +1,12 @@
+E06 semantic: Quy tac retry POST payment la gi?
+  PASS  317.8 ms
+E11 semantic: Theo incident playbook, truoc khi tang timeout can kiem tra gi?
+  PASS  273.1 ms
+           Benchmark summary           
+┏━━━━━━┳━━━━━━━━━━┳━━━━━━┳━━━━━━━━━━━━┓
+┃ Case ┃ Layer    ┃ Pass ┃ Latency ms ┃
+┡━━━━━━╇━━━━━━━━━━╇━━━━━━╇━━━━━━━━━━━━┩
+│ E06  │ semantic │ yes  │      317.8 │
+│ E11  │ semantic │ yes  │      273.1 │
+└──────┴──────────┴──────┴────────────┘
+Reports: /workspace/reports/benchmark.json | /workspace/reports/benchmark.md
